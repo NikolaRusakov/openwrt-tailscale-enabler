@@ -9,7 +9,7 @@ STOP=1
 
 start_service() {
   procd_open_instance
-  procd_set_param command /usr/bin/tailscaled
+  procd_set_param command /tmp/mnt/router_usb/entware/bin/tailscaled
 
   # Set the port to listen on for incoming VPN packets.
   # Remote nodes will automatically be informed about the new port number,
@@ -31,5 +31,5 @@ start_service() {
 }
 
 stop_service() {
-  /usr/bin/tailscaled --cleanup
+  /tmp/mnt/router_usb/entware/bin/tailscaled --cleanup
 }
